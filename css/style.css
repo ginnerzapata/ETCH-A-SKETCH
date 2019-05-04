@@ -1,5 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+p {
+    color: #D8E8C3;
+}
+
+a,
+a:hover {
+    color: #FEC841;;
+    text-decoration: none;  
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #C3BEAB;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sketch-body {
+    width: 850px;
+    height: 450px;
+    background: #FEC841;
+    border: 10px solid #6E3735;
+    box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    width: 160px;
+    height: 160px;
+    background: #EA523F;
+    border: 10px solid #6E3735;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: -200px;
+    transition: all .2s ease-in-out;
+    }
+.button:hover {
+    transform: scale(1.1); 
+}
+
+.left {
+    order:0;
+    margin-right: 30px;
+}
+.right {
+    order:2;
+    margin-left: 30px;
+}
+.screen-border{
+    width: 360px;
+    height: 405px;
+    background: #906868;
+    border: 10px solid #6E3735;
+    box-sizing: border-box;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;    
+    flex-flow: wrap;
+    order:1;
+    }
+
 .container {
-    width: 400px;
-    height: 400px;
-    background-color: aqua;
+    margin-top: 10px;
+    width: 300px;
+    height: 300px;
+    background: #D8E8C3;
+    border: 7px solid #6E3735;
+    display: flex;
+    flex-flow: wrap;
+}
+.gridActive {
+    background-color: #906868;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    color:#6E3735;
+    margin: 100px 20px 10px 20px;
 }
