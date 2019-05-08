@@ -30,7 +30,7 @@ const contSize = 300;    //the size of the container
 
  //This function is the custom grid
 function addDiv() {
-    clearCanvas();
+    newGrid();
     let numOfSq = prompt('How many squares?');
     let sqSize = contSize / numOfSq; //the size of the squares that makes the grid
     n = numOfSq*numOfSq; //divs rendered
@@ -43,13 +43,17 @@ function addDiv() {
     };
 };
 
-//This function resets the canvas
- function reset() {
-     const gridActive_div = document.querySelectorAll('.gridActive');
-     gridActive_div.classList.remove('.gridActive');
-     
+//This function clears the canvas
+ function clear() {
+     const gridActiveAll_div = document.querySelectorAll('.gridActive');
+     gridActiveAll_div.forEach(gridActiveAll_div =>{
+         gridActiveAll_div.classList.remove('gridActive');
+     })
  };
 
+ function count(selector) {
+    return selector.length;
+  };
  //buttons
- resetBtn.addEventListener('click', reset);
+ resetBtn.addEventListener('click', clear);
  gridBtn.addEventListener('click', addDiv);
