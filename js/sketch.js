@@ -33,7 +33,7 @@ const contSize = 300;    //the size of the container
  //This function is the custom grid
 function addDiv() {
     delGrid();
-    let numOfSq = prompt('How many squares?');
+    let numOfSq = prompt('How many squares per side?');
     let sqSize = contSize / numOfSq; //the size of the squares that makes the grid
     n = numOfSq*numOfSq; //divs rendered
     for(let i = 0; i<= n; ++i) {
