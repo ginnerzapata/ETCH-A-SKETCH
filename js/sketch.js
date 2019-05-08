@@ -1,8 +1,10 @@
 //DOM chaching
 const wrap_div = document.querySelector('.wrap');
+let screen = document.querySelector('.screen-border');
 const container_div = document.querySelector('.container');
 const resetBtn = document.querySelector('.left');
 const gridBtn = document.querySelector('.right');
+const par = document.querySelector('.draw');
 
 
 //creating divs
@@ -15,7 +17,7 @@ const contSize = 300;    //the size of the container
         let sqSize = contSize / defNumOfSq;
         n = defNumOfSq*defNumOfSq; //divs redered
        for(let i = 0; i<= n; ++i) {
-           let div = document.createElement('div')
+        let div = document.createElement('div');
            div.classList.add('grid');
            div.setAttribute('style', `width: ${+sqSize}px; height: ${+sqSize}px`);
            container_div.appendChild(div);
@@ -30,30 +32,41 @@ const contSize = 300;    //the size of the container
 
  //This function is the custom grid
 function addDiv() {
-    newGrid();
+    delGrid();
+    addCont();
     let numOfSq = prompt('How many squares?');
     let sqSize = contSize / numOfSq; //the size of the squares that makes the grid
     n = numOfSq*numOfSq; //divs rendered
     for(let i = 0; i<= n; ++i) {
-        let div = document.createElement('div')
+        let div = document.createElement('div');
         div.classList.add('grid');
         div.setAttribute('style', `width: ${+sqSize}px; height: ${+sqSize}px`);
         container_div.appendChild(div);
-        console.log(i);  
+        div.addEventListener("mouseover", ()=>{
+            div.classList.add('gridActive');
+        });
+        console.log('aqui');  
     };
 };
 
 //This function clears the canvas
  function clear() {
-     const gridActiveAll_div = document.querySelectorAll('.gridActive');
-     gridActiveAll_div.forEach(gridActiveAll_div =>{
-         gridActiveAll_div.classList.remove('gridActive');
-     })
+    console.log('clear');
+    const gridActiveAll_div = document.querySelectorAll('.gridActive');
+    gridActiveAll_div.forEach(gridActiveAll_div =>{
+    gridActiveAll_div.classList.remove('gridActive');
+    });    
  };
 
- function count(selector) {
-    return selector.length;
-  };
+function delGrid() {
+    screen.removeChild(container_div);
+};
+
+function addCont() {
+    let div = document.createElement('div');
+    div.classList.add('container');
+    screen.insertBefore(div, par);
+};
  //buttons
  resetBtn.addEventListener('click', clear);
  gridBtn.addEventListener('click', addDiv);
