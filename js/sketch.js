@@ -1,7 +1,7 @@
 //DOM chaching
 const wrap_div = document.querySelector('.wrap');
 let screen = document.querySelector('.screen-border');
-const container_div = document.querySelector('.container');
+let container_div = document.querySelector('.container');
 const resetBtn = document.querySelector('.left');
 const gridBtn = document.querySelector('.right');
 const par = document.querySelector('.draw');
@@ -33,7 +33,6 @@ const contSize = 300;    //the size of the container
  //This function is the custom grid
 function addDiv() {
     delGrid();
-    addCont();
     let numOfSq = prompt('How many squares?');
     let sqSize = contSize / numOfSq; //the size of the squares that makes the grid
     n = numOfSq*numOfSq; //divs rendered
@@ -58,15 +57,11 @@ function addDiv() {
     });    
  };
 
+ //empties the container
 function delGrid() {
-    screen.removeChild(container_div);
+    container_div.innerHTML = "";
 };
 
-function addCont() {
-    let div = document.createElement('div');
-    div.classList.add('container');
-    screen.insertBefore(div, par);
-};
  //buttons
  resetBtn.addEventListener('click', clear);
  gridBtn.addEventListener('click', addDiv);
